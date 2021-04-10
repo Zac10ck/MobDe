@@ -1,43 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-<script>
-function getMobileOperatingSystem() {
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-      // Windows Phone must come first because its UA also contains "Android"
-    if (/windows phone/i.test(userAgent)) {
-        return "Windows Phone";
-    }
+<html>
+<title>Site Maintenance</title>
+<style>
+  body { text-align: center; padding: 150px; }
+  h1 { font-size: 50px; }
+  body { font: 20px Helvetica, sans-serif; color: #333; }
+  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+  a { color: #dc8100; text-decoration: none; }
+  a:hover { color: #333; text-decoration: none; }
+</style>
 
-    if (/android/i.test(userAgent)) {
-        return "Android";
-    }
+<article>
+    <h1>We&rsquo;ll be back soon!</h1>
+    <div>
+        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <b><a href="mailto:abin@unisissolutions.com?subject=Email%20From%20%20Test-Server">contact us</a></b>, otherwise we&rsquo;ll be back online shortly!</p>
+        <p>&mdash; Abin Abraham</p>
+    </div>
+</article>
 
-    // iOS detection from: http://stackoverflow.com/a/9039885/177710
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        return "iOS";
-    }
-
-    return "unknown";
-}</script>
-
-<script>
-function DetectAndServe(){
-    let os = getMobileOperatingSystem();
-    if (os == "Android") {
-        window.location.href = "http://www.unisissolutions.com"; 
-    } else if (os == "iOS") {
-        window.location.href = "http://www.medassolutions.com";
-    } else if (os == "Windows Phone") {
-        window.location.href = "https://www.youtube.com/";
-    } else {
-        window.location.href = "http://www.google.co.in";
-    }
-}
-</script>
-</head>
-<body onload="DetectAndServe()">
-</body>
 </html>
